@@ -1,0 +1,10 @@
+# Seed configuration file
+#
+# Each non-empty, non-comment line specifies a seed as:
+#     <IP>:<PORT>
+#
+# Example setup with three seed nodes on localhost:
+127.0.0.1:5000
+127.0.0.1:5001
+127.0.0.1:5002
+

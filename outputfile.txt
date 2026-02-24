@@ -1,0 +1,107 @@
+2026-02-24 09:15:19 [SEED-127.0.0.1:5000] Seed starting at 127.0.0.1:5000 with 3 seeds (quorum=2)
+2026-02-24 09:15:19 [SEED-127.0.0.1:5000] Seed listening for connections...
+2026-02-24 09:16:14 [SEED-127.0.0.1:5001] Seed starting at 127.0.0.1:5001 with 3 seeds (quorum=2)
+2026-02-24 09:16:14 [SEED-127.0.0.1:5001] Seed listening for connections...
+2026-02-24 09:16:31 [SEED-127.0.0.1:5002] Seed starting at 127.0.0.1:5002 with 3 seeds (quorum=2)
+2026-02-24 09:16:31 [SEED-127.0.0.1:5002] Seed listening for connections...
+2026-02-24 09:17:52 [PEER-127.0.0.1:6000] Peer starting at 127.0.0.1:6000 with 3 seeds (quorum=2)
+2026-02-24 09:17:52 [PEER-127.0.0.1:6000] Peer listening for incoming peer connections...
+2026-02-24 09:17:53 [SEED-127.0.0.1:5000] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:17:53 [SEED-127.0.0.1:5001] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:17:56 [SEED-127.0.0.1:5002] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:17:56 [SEED-127.0.0.1:5000] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:17:56 [SEED-127.0.0.1:5002] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:17:59 [SEED-127.0.0.1:5001] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:17:59 [SEED-127.0.0.1:5000] Consensus SUCCESS for registration of 127.0.0.1:6000 (votes=3/3)
+2026-02-24 09:17:59 [SEED-127.0.0.1:5001] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:17:59 [PEER-127.0.0.1:6000] Received peer list from seed 127.0.0.1:5001: [('127.0.0.1', 6000)]
+2026-02-24 09:18:02 [SEED-127.0.0.1:5002] Consensus SUCCESS for registration of 127.0.0.1:6000 (votes=3/3)
+2026-02-24 09:27:26 [SEED-127.0.0.1:5000] Seed starting at 127.0.0.1:5000 with 3 seeds (quorum=2)
+2026-02-24 09:27:26 [SEED-127.0.0.1:5000] Seed listening for connections...
+2026-02-24 09:27:33 [SEED-127.0.0.1:5001] Seed starting at 127.0.0.1:5001 with 3 seeds (quorum=2)
+2026-02-24 09:27:33 [SEED-127.0.0.1:5001] Seed listening for connections...
+2026-02-24 09:28:13 [SEED-127.0.0.1:5002] Seed starting at 127.0.0.1:5002 with 3 seeds (quorum=2)
+2026-02-24 09:28:13 [SEED-127.0.0.1:5002] Seed listening for connections...
+2026-02-24 09:28:19 [PEER-127.0.0.1:6000] Peer starting at 127.0.0.1:6000 with 3 seeds (quorum=2)
+2026-02-24 09:28:19 [PEER-127.0.0.1:6000] Peer listening for incoming peer connections...
+2026-02-24 09:28:19 [SEED-127.0.0.1:5001] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:28:19 [SEED-127.0.0.1:5000] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:28:22 [PEER-127.0.0.1:6000] Could not contact seed 127.0.0.1:5001 for registration: timed out
+2026-02-24 09:28:22 [SEED-127.0.0.1:5000] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:28:22 [PEER-127.0.0.1:6000] Successfully registered with seed 127.0.0.1:5000
+2026-02-24 09:28:22 [PEER-127.0.0.1:6000] Received peer list from seed 127.0.0.1:5000: [('127.0.0.1', 6000)]
+2026-02-24 09:28:22 [SEED-127.0.0.1:5002] Received registration proposal for peer 127.0.0.1:6000
+2026-02-24 09:28:22 [SEED-127.0.0.1:5000] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:28:22 [SEED-127.0.0.1:5002] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:28:25 [PEER-127.0.0.1:6000] Could not contact seed 127.0.0.1:5002 for registration: timed out
+2026-02-24 09:28:25 [PEER-127.0.0.1:6000] Warning: registered with fewer seeds than quorum (got 1, need 2), continuing with available seeds.
+2026-02-24 09:28:25 [PEER-127.0.0.1:6000] No existing peers returned by seeds yet.
+2026-02-24 09:28:25 [SEED-127.0.0.1:5001] Applied JOIN_COMMIT for peer 127.0.0.1:6000
+2026-02-24 09:28:25 [SEED-127.0.0.1:5001] Consensus SUCCESS for registration of 127.0.0.1:6000 (votes=3/3)
+2026-02-24 09:28:28 [SEED-127.0.0.1:5002] Consensus SUCCESS for registration of 127.0.0.1:6000 (votes=3/3)
+2026-02-24 09:28:30 [PEER-127.0.0.1:6000] Generated gossip message: 1771925310.2648833:127.0.0.1:1
+2026-02-24 09:28:35 [PEER-127.0.0.1:6000] Generated gossip message: 1771925315.2711234:127.0.0.1:2
+2026-02-24 09:28:40 [PEER-127.0.0.1:6000] Generated gossip message: 1771925320.2737858:127.0.0.1:3
+2026-02-24 09:28:45 [PEER-127.0.0.1:6000] Generated gossip message: 1771925325.277436:127.0.0.1:4
+2026-02-24 09:28:50 [PEER-127.0.0.1:6000] Generated gossip message: 1771925330.2793932:127.0.0.1:5
+2026-02-24 09:28:54 [PEER-127.0.0.1:6000] Generated gossip message: 1771925334.3952308:127.0.0.1:6
+2026-02-24 09:28:59 [PEER-127.0.0.1:6000] Generated gossip message: 1771925339.3976882:127.0.0.1:7
+2026-02-24 09:29:04 [PEER-127.0.0.1:6000] Generated gossip message: 1771925344.4018192:127.0.0.1:8
+2026-02-24 09:29:09 [PEER-127.0.0.1:6000] Generated gossip message: 1771925349.4036167:127.0.0.1:9
+2026-02-24 09:29:14 [PEER-127.0.0.1:6000] Generated gossip message: 1771925354.4058697:127.0.0.1:10
+2026-02-24 09:31:20 [PEER-127.0.0.1:6001] Peer starting at 127.0.0.1:6001 with 3 seeds (quorum=2)
+2026-02-24 09:31:20 [PEER-127.0.0.1:6001] Peer listening for incoming peer connections...
+2026-02-24 09:31:21 [SEED-127.0.0.1:5002] Received registration proposal for peer 127.0.0.1:6001
+2026-02-24 09:31:21 [SEED-127.0.0.1:5000] Applied JOIN_COMMIT for peer 127.0.0.1:6001
+2026-02-24 09:31:24 [SEED-127.0.0.1:5001] Applied JOIN_COMMIT for peer 127.0.0.1:6001
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Could not contact seed 127.0.0.1:5002 for registration: timed out
+2026-02-24 09:31:24 [SEED-127.0.0.1:5000] Received registration proposal for peer 127.0.0.1:6001
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Successfully registered with seed 127.0.0.1:5000
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Received peer list from seed 127.0.0.1:5000: [('127.0.0.1', 6000), ('127.0.0.1', 6001)]
+2026-02-24 09:31:24 [SEED-127.0.0.1:5001] Received registration proposal for peer 127.0.0.1:6001
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Successfully registered with seed 127.0.0.1:5001
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Received peer list from seed 127.0.0.1:5001: [('127.0.0.1', 6000), ('127.0.0.1', 6001)]
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Union of known peers from seeds: [('127.0.0.1', 6000)]
+2026-02-24 09:31:24 [PEER-127.0.0.1:6001] Selected 1 neighbors from candidates.
+2026-02-24 09:31:27 [SEED-127.0.0.1:5002] Consensus SUCCESS for registration of 127.0.0.1:6001 (votes=3/3)
+2026-02-24 09:31:29 [PEER-127.0.0.1:6001] Generated gossip message: 1771925489.072418:127.0.0.1:1
+2026-02-24 09:31:34 [PEER-127.0.0.1:6001] Generated gossip message: 1771925494.1390793:127.0.0.1:2
+2026-02-24 09:31:39 [PEER-127.0.0.1:6001] Generated gossip message: 1771925499.1854782:127.0.0.1:3
+2026-02-24 09:31:44 [PEER-127.0.0.1:6001] Locally suspecting neighbor 127.0.0.1:6000 as dead.
+2026-02-24 09:31:44 [PEER-127.0.0.1:6001] Generated gossip message: 1771925504.1864362:127.0.0.1:4
+2026-02-24 09:31:44 [PEER-127.0.0.1:6000] Locally suspecting neighbor 127.0.0.1:6001 as dead.
+2026-02-24 09:31:47 [PEER-127.0.0.1:6002] Peer starting at 127.0.0.1:6002 with 3 seeds (quorum=2)
+2026-02-24 09:31:47 [PEER-127.0.0.1:6002] Peer listening for incoming peer connections...
+2026-02-24 09:31:48 [SEED-127.0.0.1:5000] Received registration proposal for peer 127.0.0.1:6002
+2026-02-24 09:31:48 [SEED-127.0.0.1:5001] Applied JOIN_COMMIT for peer 127.0.0.1:6002
+2026-02-24 09:31:49 [PEER-127.0.0.1:6001] Generated gossip message: 1771925509.1987872:127.0.0.1:5
+2026-02-24 09:31:51 [SEED-127.0.0.1:5002] Applied JOIN_COMMIT for peer 127.0.0.1:6002
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Could not contact seed 127.0.0.1:5000 for registration: timed out
+2026-02-24 09:31:51 [SEED-127.0.0.1:5001] Received registration proposal for peer 127.0.0.1:6002
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Successfully registered with seed 127.0.0.1:5001
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Received peer list from seed 127.0.0.1:5001: [('127.0.0.1', 6002), ('127.0.0.1', 6000), ('127.0.0.1', 6001)]
+2026-02-24 09:31:51 [SEED-127.0.0.1:5002] Received registration proposal for peer 127.0.0.1:6002
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Successfully registered with seed 127.0.0.1:5002
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Received peer list from seed 127.0.0.1:5002: [('127.0.0.1', 6000), ('127.0.0.1', 6001), ('127.0.0.1', 6002)]
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Union of known peers from seeds: [('127.0.0.1', 6000), ('127.0.0.1', 6001)]
+2026-02-24 09:31:51 [PEER-127.0.0.1:6002] Selected 2 neighbors from candidates.
+2026-02-24 09:31:54 [PEER-127.0.0.1:6001] Generated gossip message: 1771925514.2007573:127.0.0.1:6
+2026-02-24 09:31:54 [SEED-127.0.0.1:5000] Consensus SUCCESS for registration of 127.0.0.1:6002 (votes=3/3)
+2026-02-24 09:31:56 [PEER-127.0.0.1:6002] Generated gossip message: 1771925516.8017373:127.0.0.1:1
+2026-02-24 09:31:59 [PEER-127.0.0.1:6001] Generated gossip message: 1771925519.2799184:127.0.0.1:7
+2026-02-24 09:32:00 [PEER-127.0.0.1:6002] Generated gossip message: 1771925520.782561:127.0.0.1:2
+2026-02-24 09:32:03 [PEER-127.0.0.1:6001] Generated gossip message: 1771925523.272539:127.0.0.1:8
+2026-02-24 09:32:05 [PEER-127.0.0.1:6002] Generated gossip message: 1771925525.7974179:127.0.0.1:3
+2026-02-24 09:32:08 [PEER-127.0.0.1:6001] Locally suspecting neighbor 127.0.0.1:6002 as dead.
+2026-02-24 09:32:08 [PEER-127.0.0.1:6001] Generated gossip message: 1771925528.2746537:127.0.0.1:9
+2026-02-24 09:32:08 [PEER-127.0.0.1:6000] Locally suspecting neighbor 127.0.0.1:6002 as dead.
+2026-02-24 09:32:10 [PEER-127.0.0.1:6002] Generated gossip message: 1771925530.7994707:127.0.0.1:4
+2026-02-24 09:32:10 [PEER-127.0.0.1:6002] Locally suspecting neighbor 127.0.0.1:6001 as dead.
+2026-02-24 09:32:10 [PEER-127.0.0.1:6002] Locally suspecting neighbor 127.0.0.1:6000 as dead.
+2026-02-24 09:32:13 [PEER-127.0.0.1:6001] Generated gossip message: 1771925533.347284:127.0.0.1:10
+2026-02-24 09:32:15 [PEER-127.0.0.1:6002] Generated gossip message: 1771925535.8088694:127.0.0.1:5
+2026-02-24 09:32:20 [PEER-127.0.0.1:6002] Generated gossip message: 1771925540.8276398:127.0.0.1:6
+2026-02-24 09:32:25 [PEER-127.0.0.1:6002] Generated gossip message: 1771925545.829062:127.0.0.1:7
+2026-02-24 09:32:30 [PEER-127.0.0.1:6002] Generated gossip message: 1771925550.858877:127.0.0.1:8
+2026-02-24 09:32:34 [PEER-127.0.0.1:6002] Generated gossip message: 1771925554.8529725:127.0.0.1:9
+2026-02-24 09:32:39 [PEER-127.0.0.1:6002] Generated gossip message: 1771925559.859019:127.0.0.1:10
