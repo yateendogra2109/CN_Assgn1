@@ -165,6 +165,8 @@ class SeedNode:
                 else:
                     # Unknown message type is ignored; this keeps protocol simple.
                     continue
+        except OSError:
+            pass
         finally:
             conn.close()
 
