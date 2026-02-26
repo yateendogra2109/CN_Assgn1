@@ -47,11 +47,11 @@ How to Run Seed Nodes
 1. Open **three terminals** (or more, but minimum 2 seeds required by the assignment).
 2. In each terminal, change directory to the project folder:
 
-    cd <path-to-project-folder>
+    `cd <path-to-project-folder>`
 
 3. Start each seed with:
 
-    python seed.py <listen_ip> <listen_port> config.txt
+    `python seed.py <listen_ip> <listen_port> config.txt`
 
    Examples (matching the default `config.txt`):
 

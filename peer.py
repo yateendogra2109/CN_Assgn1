@@ -21,12 +21,12 @@ Responsibilities (as required by the assignment):
 - Maintain a Message List (ML) to ensure each gossip message traverses
   a link at most once.
 - Periodically generate and broadcast gossip messages.
-- Periodically check neighbor liveness (using lightweight ping messages)
-  and only declare a neighbor dead after a simple peer-level consensus
+- Periodically check neighbor liveness (using ping messages)
+  and only declare a neighbor dead after a simple peer level consensus
   (multiple neighbors suspect the same node).
-- Report dead nodes to seeds using the assignment-specified message format.
-- Log received peer lists, first-time gossip messages, and confirmed
-  dead-node reports to both console and output file.
+- Report dead nodes to seeds using the assignment specified message format.
+- Log received peer lists, first time gossip messages, and confirmed
+  dead node reports to both console and output file.
 """
 
 
@@ -91,7 +91,7 @@ class PeerNode:
     """
     Peer node implementation.
 
-    This implementation uses a simple thread-per-connection model and a
+    This implementation uses a simple thread per connection model and a
     very small set of message types to keep things easy to understand.
     """
 
@@ -123,11 +123,11 @@ class PeerNode:
         self.neighbor_states: Dict[Tuple[str, int], NeighborState] = {}
         self.neighbors_lock = threading.Lock()
 
-        # Message List to track seen gossip messages (hashes).
+        # Message List to track seen gossip messages.
         self.message_lock = threading.Lock()
         self.seen_messages: Set[str] = set()
 
-        # Suspicion tracking for peer-level consensus on dead nodes.
+        # Suspicion tracking for peer level consensus on dead nodes.
         self.suspicions_lock = threading.Lock()
         self.local_suspicions: Set[Tuple[str, int]] = set()
         self.remote_suspicions: Dict[Tuple[str, int], Set[Tuple[str, int]]] = {}
@@ -136,10 +136,7 @@ class PeerNode:
         # Seeds we successfully registered with.
         self.registered_seeds: List[Tuple[str, int]] = []
 
-    # ------------------------------------------------------------------
-    # Seed registration and peer-list retrieval
-    # ------------------------------------------------------------------
-
+    # Seed registration and peer list retrieval
     def register_with_seeds(self) -> None:
         """
         Register with at least quorum seeds.
@@ -244,13 +241,13 @@ class PeerNode:
     def build_neighbors(self, candidates: List[Tuple[str, int]]) -> None:
         """
         Select neighbors from the given candidate list so that peer degrees
-        tend to be small (approximate power-law behavior).
+        tend to be small.
         """
         if not candidates:
             return
 
         # Sample desired degree from a small discrete distribution
-        # biased towards lower degrees (1/k-like shape).
+        # biased towards lower degrees.
         degrees = [1, 2, 3, 4, 5]
         weights = [0.4, 0.3, 0.15, 0.1, 0.05]
         desired_degree = random.choices(degrees, weights=weights, k=1)[0]
@@ -284,6 +281,7 @@ class PeerNode:
         except OSError:
             sock.close()
             return
+        sock.settimeout(None)
 
         with self.neighbors_lock:
             self.neighbors[(nip, nport)] = sock
@@ -363,6 +361,8 @@ class PeerNode:
                 else:
                     # Unknown message types can be ignored safely.
                     continue
+        except OSError:
+            pass
         finally:
             if remote_id is not None:
                 with self.neighbors_lock:
