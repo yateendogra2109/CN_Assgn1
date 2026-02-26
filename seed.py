@@ -17,14 +17,6 @@ Responsibilities (as required by the assignment):
 - Support consensus-based peer removal (on dead-node reports from peers).
 - Log proposals, consensus outcomes, and confirmed removals
   to both the console and an output file.
-
-Design notes (kept intentionally simple for a teaching-oriented implementation):
-- All seeds share the same config file listing seed IP:port pairs (one per line).
-- Consensus is implemented as a best-effort majority vote using
-  one-round "propose/vote/commit" messages between seeds.
-- For simplicity, every seed always votes "OK" on proposals; the
-  majority condition still prevents unilateral changes because a
-  single seed cannot commit unless it can contact a majority.
 """
 
 
@@ -58,7 +50,6 @@ def load_seeds(config_path: str) -> List[Tuple[str, int]]:
     Read the seed configuration file.
 
     Expected format (one entry per line, comments allowed):
-        # This is a comment
         127.0.0.1:5000
         127.0.0.1:5001
     """
@@ -101,9 +92,7 @@ class SeedNode:
             f"Seed starting at {ip}:{port} with {self.n} seeds (quorum={self.quorum})"
         )
 
-    # ------------------------------------------------------------------
     # Networking helpers
-    # ------------------------------------------------------------------
 
     def start(self) -> None:
         """
@@ -123,10 +112,6 @@ class SeedNode:
             t.start()
 
     def handle_connection(self, conn: socket.socket, addr) -> None:
-        """
-        Handle a TCP connection from a peer or another seed.
-        Messages are line-based and parsed by a simple prefix.
-        """
         try:
             file_obj = conn.makefile("r")
             for line in file_obj:
@@ -181,9 +166,7 @@ class SeedNode:
             resp = f.readline()
             return resp.strip() if resp else ""
 
-    # ------------------------------------------------------------------
     # Peer registration and consensus
-    # ------------------------------------------------------------------
 
     def handle_peer_register(
         self, conn: socket.socket, peer_ip: str, peer_port: int
