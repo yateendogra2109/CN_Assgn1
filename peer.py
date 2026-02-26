@@ -149,7 +149,7 @@ class PeerNode:
 
         for sip, sport in seeds:
             try:
-                with socket.create_connection((sip, sport), timeout=3.0) as s:
+                with socket.create_connection((sip, sport), timeout=10.0) as s:
                     f = s.makefile("r")
                     # Registration request
                     s.sendall(f"REGISTER|{self.ip}|{self.port}\n".encode("utf-8"))
@@ -305,6 +305,11 @@ class PeerNode:
 
         while True:
             conn, _ = server_sock.accept()
+            try:
+                conn.sendall(f"HELLO|{self.ip}|{self.port}\n".encode("utf-8"))
+            except OSError:
+                conn.close()
+                continue
             t = threading.Thread(
                 target=self.handle_peer_connection, args=(conn,), daemon=True
             )
@@ -583,7 +588,7 @@ class PeerNode:
 
         for sip, sport in self.seeds:
             try:
-                with socket.create_connection((sip, sport), timeout=3.0) as s:
+                with socket.create_connection((sip, sport), timeout=10.0) as s:
                     f = s.makefile("r")
                     s.sendall(msg.encode("utf-8"))
                     resp = f.readline().strip()
