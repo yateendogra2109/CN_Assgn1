@@ -56,13 +56,7 @@ def setup_logger(ip: str, port: int) -> logging.Logger:
 
 
 def load_seeds(config_path: str) -> List[Tuple[str, int]]:
-    """
-    Read the same seed configuration file as the seeds.
-
-    Expected format:
-        127.0.0.1:5000
-        127.0.0.1:5001
-    """
+   
     seeds: List[Tuple[str, int]] = []
     with open(config_path, "r") as f:
         for line in f:
@@ -88,12 +82,7 @@ class NeighborState:
 
 
 class PeerNode:
-    """
-    Peer node implementation.
-
-    This implementation uses a simple thread per connection model and a
-    very small set of message types to keep things easy to understand.
-    """
+   
 
     GOSSIP_INTERVAL = 5.0
     MAX_GOSSIP_MESSAGES = 10
@@ -234,9 +223,6 @@ class PeerNode:
                 continue
         return entries
 
-    # ------------------------------------------------------------------
-    # Neighbor selection and connection management
-    # ------------------------------------------------------------------
 
     def build_neighbors(self, candidates: List[Tuple[str, int]]) -> None:
         """
@@ -385,9 +371,7 @@ class PeerNode:
                 self.neighbor_states[nid] = state
         state.last_seen = time.time()
 
-    # ------------------------------------------------------------------
     # Gossip protocol
-    # ------------------------------------------------------------------
 
     def gossip_loop(self) -> None:
         """
@@ -448,9 +432,7 @@ class PeerNode:
                 # Connection issues are handled by the connection handler.
                 continue
 
-    # ------------------------------------------------------------------
     # Liveness detection and peer-level consensus
-    # ------------------------------------------------------------------
 
     def ping_loop(self) -> None:
         """
@@ -604,9 +586,7 @@ class PeerNode:
                 f"did not receive confirmation from seeds."
             )
 
-    # ------------------------------------------------------------------
     # Main entrypoint helpers
-    # ------------------------------------------------------------------
 
     def start(self) -> None:
         """

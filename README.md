@@ -1,4 +1,6 @@
 CSL3080 Assignment 1 – Gossip-Based P2P Network (Python)
+By ->  Yateen(B23CS1082)
+  |->  Shlok Kanani(B23CS1068)
 ========================================================
 
 This submission implements a simple gossip-based peer-to-peer (P2P) system with:
@@ -37,8 +39,6 @@ Format (one seed per line, comments allowed):
     127.0.0.1:5000
     127.0.0.1:5001
     127.0.0.1:5002
-
-You may edit IP addresses and ports as needed for your test environment.
 
 
 How to Run Seed Nodes
@@ -123,7 +123,6 @@ How to Run Peer Nodes
 
 
 Liveness Detection and Dead-Node Reporting
-------------------------------------------
 
 - Each peer periodically sends lightweight `PING` messages to neighbors
   and records when it last heard from them.
@@ -168,9 +167,6 @@ Logging and `outputfile.txt`
 Important Simplifying Assumptions
 ---------------------------------
 
-- **Network environment**: The code is designed to work on a single machine
-  using `127.0.0.1` and different ports, but will also work across machines
-  if IPs in `config.txt` are updated accordingly and ports are reachable.
 - **Consensus**:
   - Seeds always vote "OK" on proposals but still require a **majority of
     reachable seeds** to complete a commit, preventing unilateral changes.
@@ -197,18 +193,7 @@ How to Test Quickly
    - Report the dead peer to seeds and log the confirmed removal.
 
 
-Packaging for Submission
-------------------------
 
-Per the assignment instructions:
 
-- Ensure the following files are included in the archive:
-  - `seed.py`
-  - `peer.py`
-  - `config.txt`
-  - `outputfile.txt` (generated after running, can be included as sample logs)
-  - `README.md` (this file)
-- Create the required archive:
 
-    tar -czf rollno1-rollno2.tar.gz seed.py peer.py config.txt outputfile.txt README.md
 
